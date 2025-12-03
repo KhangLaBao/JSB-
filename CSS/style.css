@@ -11,39 +11,89 @@
 }
 
 #carouselExampleIndicators {
-  max-width: 769px;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #facetime-block {
-  /* 1. Kích hoạt Flexbox */
   display: flex;
-
-  /* 2. Xếp các phần tử con (text, image) nằm ngang */
   flex-direction: row;
 
-  /* 3. Đưa ảnh sang phải và tạo khoảng trống giữa văn bản và ảnh */
-  justify-content: space-between;
+  /* ĐÃ THAY ĐỔI: Thay vì đẩy ra hai phía, chúng ta căn chỉnh từ đầu */
+  justify-content: flex-start; /* Hoặc 'center' nếu bạn muốn cả khối nằm giữa trang */
 
-  /* 4. Căn giữa các mục theo chiều dọc */
   align-items: center;
-
-  /* Thêm padding tổng thể cho khối (Tùy chọn) */
   padding: 40px;
+  /* Tùy chọn: Đặt max-width cho khối cha nếu bạn muốn kiểm soát kích thước tổng thể */
+  /* max-width: 1000px; */
+  /* margin: 0 auto; */
 }
 
-#facetime-block h2,
-#facetime-block p {
-  /* 5. Đặt giới hạn chiều rộng cho khối văn bản */
-  /* Giả sử bạn muốn văn bản chiếm khoảng 55% không gian */
-  width: 55%;
-  /* Tùy chọn: Thêm margin bên phải để đẩy văn bản ra xa ảnh */
-  margin-right: 30px;
+.text-content {
+  /* Giảm width xuống để nó không chiếm quá nhiều không gian */
+  width: 45%;
+  /* THÊM MARGIN: Dùng margin phải để tạo khoảng cách giữa văn bản và ảnh */
+  margin-right: 50px;
+}
+
+#facetime-block h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 #facetime-block img {
-  /* 6. Giới hạn kích thước ảnh để nó không quá lớn */
-  max-width: 40%;
+  /* Đặt kích thước ảnh nhỏ hơn và linh hoạt hơn */
+  max-width: 300px; /* Hoặc một giá trị pixel cố định */
   height: auto;
+}
+
+/* CSS Cập nhật cho bố cục Hình ảnh (Trái) - Văn bản (Phải) */
+#facetime-block-reversed {
+  display: flex;
+
+  /* 1. ĐẢO NGƯỢC THỨ TỰ: Đưa mục cuối (ảnh) lên đầu (trái) */
+  flex-direction: row-reverse;
+
+  /* Vẫn giữ căn chỉnh từ đầu hoặc căn giữa tổng thể */
+  justify-content: flex-start;
+
+  align-items: center;
+  padding: 40px;
+}
+
+.text-content-reversed {
+  /* Vẫn giữ giới hạn chiều rộng cho văn bản */
+  width: 45%;
+
+  /* 2. ĐIỀU CHỈNH MARGIN: Margin trái tạo khoảng cách giữa ảnh và văn bản */
+  /* Loại bỏ margin-right cũ và thêm margin-left */
+  margin-right: 0;
+  margin-left: 50px;
+}
+
+/* Vẫn giữ các thuộc tính ảnh và tiêu đề như cũ (hoặc dùng h3) */
+#facetime-block-reversed h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#facetime-block-reversed img {
+  max-width: 300px;
+  height: auto;
+}
+
+#multitasking-block .container {
+  /* Đảm bảo bố cục Flexbox căn giữa và căn chỉnh */
+  display: flex;
+  align-items: center;
+  /* Nếu không dùng space-between, bạn cần margin để tạo khoảng cách */
+  gap: 50px;
+}
+
+/* Điều chỉnh class text-content để không bị ảnh hưởng bởi margin-right/left của các khối khác */
+#multitasking-block .text-content {
+  width: 45%;
+  /* Đảm bảo không có margin-right/left xung đột nếu bạn dùng gap */
+  margin: 0;
 }
