@@ -97,3 +97,158 @@
   /* Đảm bảo không có margin-right/left xung đột nếu bạn dùng gap */
   margin: 0;
 }
+
+/* Container Flexbox */
+.facetime-container {
+  display: flex;
+  align-items: flex-start; /* Căn chỉnh các mục con từ trên xuống */
+  justify-content: space-between; /* Đẩy hai khối ra hai phía */
+  max-width: 1200px; /* Giới hạn chiều rộng tổng thể */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 20px 0;
+}
+
+/* Khối Văn bản (Bên trái) */
+.text-content {
+  width: 48%; /* Chiếm khoảng một nửa chiều rộng */
+  padding-right: 40px;
+}
+
+/* -------------------------------------- */
+/* CSS CHÍNH CHO KHỐI FACETIME */
+/* -------------------------------------- */
+
+.facetime-container {
+  display: flex;
+  /* KHÔNG DÙNG flex-direction: row-reverse; CHỈ CẦN ĐẢO THỨ TỰ TRONG HTML */
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  gap: 40px;
+}
+
+/* 1. CỘT ẢNH LỚN (LEFT Side) */
+.facetime-image-group-left {
+  width: 48%;
+  display: flex;
+  justify-content: flex-end; /* Đẩy ảnh lớn sang phải trong cột 48% */
+}
+
+.main-facetime-image-left {
+  width: 100%; /* Chiếm 100% của cột 48% */
+  height: auto;
+  display: block;
+}
+
+/* 2. CỘT VĂN BẢN (RIGHT Side) */
+.text-content-right {
+  width: 52%; /* Dành nhiều chỗ hơn cho cột văn bản và chi tiết */
+  padding-left: 0;
+  padding-top: 1em; /* Căn chỉnh nhẹ cho văn bản */
+}
+
+/* -------------------------------------- */
+/* ĐIỀU CHỈNH KHỐI HAI CAMERA */
+/* -------------------------------------- */
+
+.two-views-block {
+  margin-top: 2em;
+  padding-top: 0;
+  /* Đảm bảo đường phân cách mỏng xuất hiện phía trên */
+  border-top: 1px solid #eee;
+}
+
+.two-views-content-wrapper {
+  /* Dùng Flexbox hoặc float để căn chỉnh ảnh nhỏ và văn bản chi tiết */
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.video-thumbnail-inline {
+  width: 100px; /* Kích thước ảnh nhỏ */
+  height: auto;
+  /* Loại bỏ float nếu dùng Flexbox */
+  flex-shrink: 0;
+}
+
+.two-views-detail {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Giữ các style tiêu đề khác nếu cần */
+.facetime-title {
+  font-size: 2.8em;
+  font-weight: 300;
+}
+
+/* -------------------------------------- */
+/* CSS CHÍNH CHO KHỐI RETINA DISPLAY */
+/* -------------------------------------- */
+
+.retina-container {
+  display: flex; /* Kích hoạt Flexbox */
+  align-items: flex-start; /* Căn chỉnh lên đỉnh */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0; /* Khoảng cách lớn hơn */
+  gap: 30px;
+}
+
+/* 1. CỘT VĂN BẢN (LEFT Side - 45%) */
+.retina-text-content-left {
+  width: 45%;
+  padding-top: 10px;
+}
+
+.retina-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.retina-icon {
+  width: 40px; /* Kích thước icon nhỏ */
+  height: 40px;
+  margin-right: 10px;
+}
+
+.retina-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.retina-description {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.learn-more-retina-link {
+  color: #0070c9;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* 2. CỘT HÌNH ẢNH (RIGHT Side - 55%) */
+.retina-image-content-right {
+  width: 55%;
+  display: flex;
+  justify-content: flex-start; /* Căn ảnh sang trái trong cột của nó */
+}
+
+.main-retina-image-right {
+  /* Đảm bảo ảnh không bị tràn */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Có thể cần thêm box-shadow hoặc border nếu thiết kế yêu cầu */
+}
