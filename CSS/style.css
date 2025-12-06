@@ -253,7 +253,6 @@
   /* Có thể cần thêm box-shadow hoặc border nếu thiết kế yêu cầu */
 }
 
-
 .title-description {
   margin-left: 10em;
   margin-right: 10em;
@@ -277,4 +276,108 @@
   line-height: 1.6;
   margin-bottom: 1.5em;
   font-size: 1.5em;
+}
+
+/* -------------------------------------- */
+/* KHỐI CHỌN SẢN PHẨM (Sử dụng Flexbox) */
+/* -------------------------------------- */
+
+#buy-iphone-section h1 {
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.iphone-selection-container {
+  display: flex;
+  justify-content: center; /* Căn giữa hai hộp */
+  gap: 20px; /* Khoảng cách giữa hai hộp */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.iphone-selection-wrapper {
+  /* Đảm bảo mỗi hộp chiếm gần 50% */
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: #f7f7f7; /* Nền hơi xám */
+  display: flex;
+  flex-direction: column; /* Xếp chồng nội dung theo cột */
+  align-items: center;
+  text-align: center;
+}
+
+/* -------------------------------------- */
+/* THÔNG TIN SẢN PHẨM BÊN TRONG HỘP */
+/* -------------------------------------- */
+
+.model-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.model-image {
+  max-width: 80px; /* Kích thước ảnh iPhone nhỏ */
+  height: auto;
+}
+
+.details {
+  text-align: left;
+}
+
+.details h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* -------------------------------------- */
+/* NÚT BẤM (BUTTON) */
+/* -------------------------------------- */
+
+.select-button {
+  /* Tạo kiểu nút màu xanh dương nổi bật */
+  background-color: #0070c9;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+  transition: background-color 0.2s;
+}
+
+.select-button:hover {
+  background-color: #005aa7;
+}
+
+/* -------------------------------------- */
+/* THÔNG TIN VẬN CHUYỂN */
+/* -------------------------------------- */
+
+.shipping-info {
+  font-size: 0.85em;
+  color: #888;
+  margin-top: auto; /* Đẩy thông tin này xuống cuối hộp */
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+  width: 100%;
 }
