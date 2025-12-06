@@ -261,4 +261,20 @@
   margin-bottom: 1.5em;
   font-size: 1.5em;
 }
-/* https://webflow.com/glossary/em  Định nghĩa của scale unit em"
+/* https://webflow.com/glossary/em  Định nghĩa của scale unit em" */
+
+#linkdesp {
+  margin-left: 20em;
+  margin-right: 20em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+
+#linkdesp2 {
+  margin-left: 25em;
+  margin-right: 10em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
