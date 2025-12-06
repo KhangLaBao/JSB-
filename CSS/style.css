@@ -252,3 +252,13 @@
   display: block;
   /* Có thể cần thêm box-shadow hoặc border nếu thiết kế yêu cầu */
 }
+
+
+.title-description {
+  margin-left: 10em;
+  margin-right: 10em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+/* https://webflow.com/glossary/em  Định nghĩa của scale unit em"
