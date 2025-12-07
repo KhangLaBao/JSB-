@@ -63,94 +63,123 @@
       </div>
     </nav>
 
-<section id="buy-iphone-section" class="py-5">
-    <h1>1. Select your iPhone model to buy.</h1>
-    
-    <div class="iphone-selection-container">
+<section id="global-buy-form" class="py-5">
+    <div class="form-container">
+        <h1>Hoàn tất Đơn hàng iPhone 4</h1>
         
-        <div class="iphone-selection-wrapper">
-            <div class="model-info">
-                <img src="../images/product-hero-iphone4.jpg" alt="iPhone 4 front view" class="model-image">
-                <div class="details">
-                    <h3>iPhone 4</h3>
-                    <ul>
-                        <li>: 16GB</li>
-                        <li>: 32GB</li>
-                        <li>Ships: Within</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="buyingform.html" class="select-button">Select iPhone 4</a>
-            <p class="shipping-info">Get free shipping or in-store pickup</p>
-        </div>
-        
-        <div class="iphone-selection-wrapper">
-            <div class="model-info">
-                <img src="../images/product-hero-iphone4.jpg" alt="iPhone 4S side view" class="model-image">
-                <div class="details">
-                    <h3>iPhone 4S</h3>
-                    <ul>
-                        <li>: 16GB</li>
-                        <li>: 32GB</li>
-                        <li>Ships: Within</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="buyingform copy.html" class="select-button">Select iPhone 4S</a>
-            <p class="shipping-info">Get free shipping or in-store pickup</p>
-        </div>
-        
-    </div>
-</section>
+        <form action="/submit-order" method="POST" class="purchase-form">
 
-<section id="faq-section" class="py-5">
-    <h2>Các Câu Hỏi Thường Gặp (FAQ)</h2>
-    
-    <div class="faq-category">
-        <h3 class="category-title">Mạng Di Động & SIM</h3>
-        <dl class="faq-list">
-            <dt>Nhà mạng di động nào ở Việt Nam cung cấp dịch vụ cho iPhone?</dt>
-            <dd>iPhone là điện thoại không khóa (unlocked) và hỗ trợ SIM từ mọi nhà mạng di động tại Việt Nam và trên thế giới (Ví dụ: Viettel, VNPT/VinaPhone, MobiFone).</dd>
-            
-            <dt>iPhone có dùng được SIM từ nhà mạng khác (quốc tế) không?</dt>
-            <dd>Có. iPhone được bán không khóa mạng (SIM-free/unlocked), cho phép bạn sử dụng SIM từ bất kỳ nhà mạng nào trên toàn cầu.</dd>
-        </dl>
+            <fieldset class="order-summary-box">
+                <legend>Tóm tắt Đơn hàng</legend>
+                <p><strong>Sản phẩm:</strong> iPhone 4s</p>
+                <p><strong>Giá:</strong> 4,690,000VNĐ</p>
+                <p><strong>Vận chuyển:</strong> Miễn phí</p>
+                <hr>
+                <p class="total"><strong>Tổng cộng: 4,690,000VNĐ</strong></p>
+                
+            </fieldset>
+            <fieldset>
+                <legend>Chọn Dung lượng (GB) (Lưu ý:Lựa chọn mặc định là 32GB)</legend>
+                
+                <div class="storage-selection">
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="storage" value="8" data-price="499" id="gb8">
+                        <span class="checkmark"></span>
+                        8 GB
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="storage" value="16" data-price="599" id="gb16">
+                        <span class="checkmark"></span>
+                        16 GB
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="storage" value="32" data-price="649" id="gb32" checked>
+                        <span class="checkmark"></span>
+                        32 GB
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Màu (Lưu ý:Lựa chọn mặc định là Đen)</legend>
+                
+                <div class="storage-selection">
+                    
+                    
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="color" value="white">
+                        <span class="checkmark"></span>
+                        Trắng
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="color" value="black">
+                        <span class="checkmark"></span>
+                        Đen
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Thông tin Giao hàng</legend>
+                
+                <div class="form-group">
+                    <label for="full-name">Tên đầy đủ:</label>
+                    <input type="text" id="full-name" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Địa chỉ Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Số điện thoại liên hệ:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group address-group">
+                    <label for="address">Địa chỉ Giao hàng:</label>
+                    <input type="text" id="address" name="address" required placeholder="Số nhà, tên đường, Phường/Xã">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Tỉnh/Thành phố:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip-code">Mã bưu điện (Zip Code):</label>
+                        <input type="text" id="zip-code" name="zipCode">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Thông tin Thanh toán</legend>
+                
+                <div class="form-group">
+                    <label for="card-number">Số thẻ:</label>
+                    <input type="text" id="card-number" name="cardNumber" required placeholder="xxxx xxxx xxxx xxxx">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Ngày hết hạn:</label>
+                        <input type="text" id="expiry-date" name="expiryDate" required placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">Mã CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required placeholder="XXX">
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-button">Đặt Hàng Ngay</button>
+        </form>
     </div>
-    
-    <div class="faq-category">
-        <h3 class="category-title">Hợp Đồng & Mua Hàng</h3>
-        <dl class="faq-list">
-            <dt>Tôi có thể mua iPhone mà không cần hợp đồng nhà mạng không?</dt>
-            <dd>Có. iPhone được bán tại Việt Nam thường là phiên bản không khóa mạng và không yêu cầu hợp đồng dịch vụ dài hạn với nhà mạng cụ thể nào.</dd>
-            
-            <dt>iPhone của tôi đã sẵn sàng sử dụng khi mua về chưa?</dt>
-            <dd>Có. iPhone mới của bạn đã sẵn sàng. Tất cả những gì bạn cần làm là lắp SIM và tiến hành kích hoạt (set up) thông qua iTunes (hoặc trực tiếp trên thiết bị đối với các phiên bản iOS hiện tại). Bạn không cần phải gọi điện hoặc đến cửa hàng nhà mạng để bắt đầu sử dụng.</dd>
-        </dl>
-    </div>
-    
-    <div class="faq-category">
-        <h3 class="category-title">Chuyển Đổi & Dữ Liệu</h3>
-        <dl class="faq-list">
-            <dt>Tôi có thể mua iPhone nếu tôi đã có số thuê bao đang hoạt động không?</dt>
-            <dd>Có. Bạn chỉ cần lắp SIM hiện tại vào iPhone mới và làm theo hướng dẫn kích hoạt.</dd>
-            
-            <dt>Tôi cần cung cấp thông tin gì để mua iPhone trực tuyến?</dt>
-            <dd>Khi mua iPhone từ các cửa hàng bán lẻ chính thức (Authorized Resellers) hoặc Apple Online Store, bạn chỉ cần cung cấp thông tin cá nhân và thanh toán để hoàn tất đơn hàng. Không cần cung cấp thông tin thuê bao di động (như 4 số cuối CMND/CCCD hoặc mã zip thanh toán) vì máy không bị khóa mạng.</dd>
-            
-            <dt>Tôi có thể chuyển số điện thoại hiện tại của mình sang iPhone mới không?</dt>
-            <dd>Có. Số điện thoại hiện tại của bạn được lưu trên SIM. Sau khi bạn lắp SIM vào iPhone và hoàn tất kích hoạt, bạn có thể bắt đầu gọi điện bằng số hiện tại của mình.</dd>
-        </dl>
-    </div>
-    
-    <div class="faq-category">
-        <h3 class="category-title">Tính Năng Dữ Liệu</h3>
-        <dl class="faq-list">
-            <dt>iPhone có hỗ trợ chia sẻ kết nối Internet (Tethering/Personal Hotspot) không?</dt>
-            <dd>Có. iPhone hỗ trợ tính năng **Điểm truy cập cá nhân (Personal Hotspot)**, cho phép bạn chia sẻ kết nối 3G/4G/5G với Mac hoặc PC để truy cập Internet ở hầu hết mọi nơi — không cần Wi-Fi. Tính năng này yêu cầu gói dữ liệu di động của bạn phải hỗ trợ Hotspot.</dd>
-        </dl>
-    </div>
-    
-    <a href="#top" class="back-to-top-link">Back to top</a>
 </section>
 
     <footer id="main-footer" class="bg-dark text-white-50 py-4 mt-5">

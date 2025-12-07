@@ -381,3 +381,196 @@
   border-top: 1px dashed #ddd;
   width: 100%;
 }
+
+/* -------------------------------------- */
+/* CSS CHÍNH CHO KHỐI FAQ */
+/* -------------------------------------- */
+
+#faq-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#faq-section h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* -------------------------------------- */
+/* STYLE CHO MỖI DANH MỤC FAQ */
+/* -------------------------------------- */
+.faq-category {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.category-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+/* -------------------------------------- */
+/* STYLE CHO CÂU HỎI (dt) VÀ TRẢ LỜI (dd) */
+/* -------------------------------------- */
+.faq-list {
+  margin: 0;
+  padding: 0;
+}
+
+.faq-list dt {
+  /* Câu Hỏi */
+  font-weight: bold;
+  font-size: 1em;
+  padding: 10px 0;
+  cursor: pointer; /* Cho biết có thể nhấp (dù không có JS) */
+  border-top: 1px dotted #ccc;
+  color: #000;
+}
+
+.faq-list dt:first-of-type {
+  border-top: none;
+}
+
+.faq-list dd {
+  /* Câu Trả Lời */
+  margin-left: 0;
+  padding: 5px 0 15px 0;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* -------------------------------------- */
+/* BACK TO TOP */
+/* -------------------------------------- */
+.back-to-top-link {
+  display: block;
+  text-align: right;
+  color: #0070c9;
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-to-top-link:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------- */
+/* KHỐI CHUNG VÀ CONTAINER */
+/* -------------------------------------- */
+
+.form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.purchase-form fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.purchase-form legend {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #0070c9; /* Màu xanh Apple */
+}
+
+/* -------------------------------------- */
+/* CẤU TRÚC FORM GROUPS */
+/* -------------------------------------- */
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box; /* Quan trọng để padding không làm tăng chiều rộng */
+}
+
+/* Dành cho các hàng chứa nhiều cột (ví dụ: City và Zip) */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1; /* Chia đều chiều rộng */
+}
+
+/* -------------------------------------- */
+/* TÓM TẮT ĐƠN HÀNG */
+/* -------------------------------------- */
+
+.order-summary-box {
+  background: #f9f9f9;
+}
+
+.order-summary-box p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+.order-summary-box .total {
+  font-size: 1.1em;
+  color: #000;
+}
+
+/* -------------------------------------- */
+/* NÚT ĐẶT HÀNG */
+/* -------------------------------------- */
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #0070c9;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #005aa7;
+}
