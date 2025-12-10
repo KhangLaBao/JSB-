@@ -65,9 +65,9 @@
 
 <section id="global-buy-form" class="py-5">
     <div class="form-container">
-        <h1>Hoàn tất Đơn hàng iPhone 4</h1>
+        <h1>Hoàn tất Đơn hàng iPhone 4s</h1>
         
-        <form action="/submit-order" method="POST" class="purchase-form">
+        <form action="thankyou.html" method="GET" class="purchase-form">
 
             <fieldset class="order-summary-box">
                 <legend>Tóm tắt Đơn hàng</legend>
@@ -76,7 +76,6 @@
                 <p><strong>Vận chuyển:</strong> Miễn phí</p>
                 <hr>
                 <p class="total"><strong>Tổng cộng: 4,690,000VNĐ</strong></p>
-                
             </fieldset>
             <fieldset>
                 <legend>Chọn Dung lượng (GB) (Lưu ý:Lựa chọn mặc định là 32GB)</legend>
@@ -107,8 +106,6 @@
                 
                 <div class="storage-selection">
                     
-                    
-                    
                     <label class="radio-option">
                         <input type="radio" name="color" value="white">
                         <span class="checkmark"></span>
@@ -116,7 +113,7 @@
                     </label>
                     
                     <label class="radio-option">
-                        <input type="radio" name="color" value="black">
+                        <input type="radio" name="color" value="black" checked>
                         <span class="checkmark"></span>
                         Đen
                     </label>

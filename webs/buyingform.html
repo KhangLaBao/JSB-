@@ -67,21 +67,21 @@
     <div class="form-container">
         <h1>Hoàn tất Đơn hàng iPhone 4</h1>
         
-        <form action="/submit-order" method="POST" class="purchase-form">
+        <form action="thankyou.html" method="GET" class="purchase-form">
 
             <fieldset class="order-summary-box">
                 <legend>Tóm tắt Đơn hàng</legend>
                 <p><strong>Sản phẩm:</strong> iPhone 4</p>
-                <p><strong>Giá:</strong> $649</p>
+                <p><strong>Giá:</strong> 4,590,000 VNĐ</p>
                 <p><strong>Vận chuyển:</strong> Miễn phí</p>
                 <hr>
                 <p class="total"><strong>Tổng cộng: 4,590,000VNĐ</strong></p>
             </fieldset>
+
             <fieldset>
                 <legend>Chọn Dung lượng (GB) (Lưu ý:Lựa chọn mặc định là 32GB)</legend>
                 
                 <div class="storage-selection">
-                    
                     <label class="radio-option">
                         <input type="radio" name="storage" value="8" data-price="499" id="gb8">
                         <span class="checkmark"></span>
@@ -101,13 +101,11 @@
                     </label>
                 </div>
             </fieldset>
+
             <fieldset>
                 <legend>Màu (Lưu ý:Lựa chọn mặc định là Đen)</legend>
                 
                 <div class="storage-selection">
-                    
-                    
-                    
                     <label class="radio-option">
                         <input type="radio" name="color" value="white">
                         <span class="checkmark"></span>
@@ -115,12 +113,13 @@
                     </label>
                     
                     <label class="radio-option">
-                        <input type="radio" name="color" value="black">
+                        <input type="radio" name="color" value="black" checked>
                         <span class="checkmark"></span>
                         Đen
                     </label>
                 </div>
             </fieldset>
+
             <fieldset>
                 <legend>Thông tin Giao hàng</legend>
                 
@@ -177,6 +176,7 @@
             </fieldset>
 
             <button type="submit" class="submit-button">Đặt Hàng Ngay</button>
+            
         </form>
     </div>
 </section>
