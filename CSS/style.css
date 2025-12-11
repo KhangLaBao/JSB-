@@ -575,142 +575,189 @@
   background-color: #005aa7;
 }
 
-/* Đảm bảo style.css nằm cùng cấp với thankyou.html */
-
-/* Cài đặt cơ bản */
+/* Thankyou.html css */
 body {
-  background-color: #f2f2f2; /* Màu xám nhạt (gần trắng) */
+  font-family: Arial, sans-serif; /* Phông chữ cơ bản phổ thông */
+  background-color: #fff; /* Nền trắng */
   color: #333;
   margin: 0;
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
+  padding: 0;
+  min-width: 960px; /* Chiều rộng tối thiểu để chứa nav bar */
 }
 
-/* Container chính giữa */
+/* 1. CONTAINER CHÍNH */
 .thank-you-container {
-  width: 100%;
-  max-width: 650px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ */
-  padding: 40px;
-  border: 1px solid #ddd;
+  width: 90%;
+  max-width: 980px; /* Phù hợp với bố cục web lớn hơn của Apple */
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Tiêu đề */
-header {
-  text-align: center;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 30px;
-}
-
-.header-icon {
-  margin: 0 auto 20px;
-  width: 100px;
-  height: 100px;
-  background-color: #f7f7f7; /* Nền cho ảnh/icon */
-  border-radius: 8px;
+/* 2. NAVIGATION BAR (Mô phỏng Thanh menu Apple) */
+.apple-nav {
+  background-color: #333; /* Màu xám đậm */
+  color: white;
+  padding: 8px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Dùng box-shadow nổi nhẹ để tạo độ sâu cổ điển */
-  box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 13px;
+  font-weight: bold;
 }
 
-header h1 {
-  font-size: 24px;
-  font-weight: 600; /* Bolder than normal */
-  color: #1c1c1c;
-  margin: 0;
-}
+/* TẠM THỜI TÔI KHÔNG THẤY THẺ .apple-nav trong HTML BẠN CUNG CẤP, 
+   NHƯNG TÔI ĐỂ STYLE NÀY ĐỂ BẠN CÓ THỂ THÊM VÀO */
 
-/* Các hộp chi tiết */
-.order-details-box,
-.shipping-info {
-  padding: 20px;
-  margin-bottom: 25px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fcfcfc;
-}
-
-h2 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #444;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.detail-row,
-.estimated-date {
+/* 3. SUB-HEADER VÀ BREADCRUMB */
+.sub-header-wrapper {
+  /* Đây là div có style="padding: 15px 40px; border-bottom: 1px solid #eee;" */
+  padding: 15px 0; /* Đã điều chỉnh padding */
+  border-bottom: 1px solid #ddd; /* Màu xám nhạt hơn */
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
-  font-size: 15px;
+  align-items: center;
+  margin: 0 40px; /* Áp dụng padding hai bên */
 }
 
-.label {
-  font-weight: 400;
-  color: #666;
+.breadcrumb-nav {
+  font-size: 13px;
+  color: #777;
+  padding: 10px 0;
 }
-
-.value {
-  font-weight: 600;
-  color: #222;
-}
-
-.total-price {
-  color: #d11; /* Màu đỏ nhẹ cho giá tổng cộng */
-  font-size: 16px;
-}
-
-.delivery-message {
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #e6f7ff; /* Nền xanh nhẹ */
-  border: 1px solid #99dfff;
-  border-radius: 6px;
-  color: #0056b3;
-}
-
-/* Footer và Nút */
-.action-footer {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid #eee;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
+.breadcrumb-nav a {
+  color: #007aff;
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s;
 }
-
-.primary-button {
-  background-color: #007aff; /* Xanh dương Apple */
-  color: white;
-  border: 1px solid #007aff;
-}
-
-.primary-button:hover {
-  background-color: #0056b3;
-}
-
-.secondary-button {
-  background-color: #f7f7f7;
+.breadcrumb-nav span {
   color: #333;
-  border: 1px solid #ccc;
+  font-weight: bold;
+}
+/* Giả định bạn đã thêm breadcrumb vào trên cùng: Home > Thank You */
+
+/* 4. KHU VỰC NỘI DUNG CHÍNH (Thank you + Image) */
+.content-wrapper {
+  padding: 40px;
+  display: flex;
+  gap: 0; /* Không có khoảng cách giữa hai cột */
+  align-items: flex-start;
+  border-bottom: 1px solid #eee; /* Đường kẻ dưới khu vực chính */
 }
 
-.secondary-button:hover {
-  background-color: #e6e6e6;
+.left-column {
+  flex: 1;
+  padding-right: 50px; /* Khoảng cách giữa chữ và ảnh */
+}
+
+.left-column h1 {
+  font-size: 60px; /* Kích thước chữ rất lớn */
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 30px 0;
+  /* Dòng chữ "Thank you." nằm cao và rõ ràng */
+}
+
+.left-column p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.left-column a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+/* 5. KHU VỰC HÌNH ẢNH SẢN PHẨM */
+.right-column {
+  flex: 1.5; /* Chiếm nhiều không gian hơn, đẩy chữ sang trái */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* KHÔNG có padding */
+  min-height: 250px; /* Đảm bảo chiều cao tối thiểu */
+  position: relative;
+  right: -40px; /* Kéo ảnh sang phải để lấn ra ngoài padding của container */
+  max-width: 55%;
+}
+
+.product-image {
+  /* Đây là nơi hình ảnh Mac/iPad/iPhone nên được đặt */
+  /* Trong ảnh gốc, nó là một hình ảnh lớn duy nhất */
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+
+  /* Dùng placeholder cho bạn */
+  background-image: url("placeholder-devices.png"); /* Thay thế bằng iphonethankyou.jpeg */
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+
+  /* Xóa các thuộc tính placeholder đã dùng trong mã cũ */
+  border: none;
+  display: block;
+}
+
+/* 6. KHU VỰC THÔNG TIN BỔ SUNG (Order Number) */
+.extra-info {
+  padding: 15px 40px 15px;
+  /* Màu nền xám nhạt tinh tế hơn */
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+}
+
+.order-number-box {
+  font-size: 12px;
+  color: #333;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee; /* Đường kẻ mỏng */
+  margin-bottom: 10px;
+  font-weight: bold; /* Làm nổi bật Order Number */
+}
+
+.order-number-value {
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.extra-info p {
+  font-size: 13px;
+  margin: 5px 0 0;
+}
+
+/* 7. PHẦN SHIPPING DETAILS (Đang ở vị trí không phù hợp trong HTML mới) */
+/* Cần điều chỉnh để nó nằm trong khu vực thông báo chính (dưới h1) */
+.shipping-details {
+  display: none; /* Tạm thời ẩn đi để khớp với ảnh gốc (ảnh gốc không hiển thị phần này) */
+}
+
+/* 8. FOOTER */
+/* Style cho Footer (được thêm vào HTML của bạn) */
+#main-footer {
+  background-color: #2b2b2b; /* Màu tối cho footer */
+  color: #b0b0b0 !important;
+  font-size: 12px;
+}
+#main-footer h6 {
+  font-size: 14px;
+  color: white;
+}
+#main-footer a {
+  color: #b0b0b0;
+}
+#main-footer a:hover {
+  color: white;
+}
+.bg-dark {
+  background-color: #2b2b2b !important;
+}
+.text-white-50 {
+  color: #b0b0b0 !important;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.small {
+  font-size: 12px !important;
 }
