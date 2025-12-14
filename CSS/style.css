@@ -263,19 +263,28 @@
 /* https://webflow.com/glossary/em  Định nghĩa của scale unit em" */
 
 #linkdesp {
-  margin-left: 20em;
-  margin-right: 20em;
-  line-height: 1.6;
-  margin-bottom: 1.5em;
-  font-size: 1.5em;
+  text-align: center;
 }
 
-#linkdesp2 {
-  margin-left: 25em;
-  margin-right: 10em;
-  line-height: 1.6;
-  margin-bottom: 1.5em;
-  font-size: 1.5em;
+/* --- FIX CĂN CHỈNH HYPERLINK CHỈ DÙNG ID (DƯỚI 768PX) --- */
+@media (max-width: 768px) {
+  /* Áp dụng trực tiếp lên ID của Hyperlink (#center-link-container) */
+  #center-link-container {
+    /* 1. Thay đổi display để margin: auto có tác dụng */
+    display: block !important;
+
+    /* 2. Đảm bảo thẻ link chiếm toàn bộ chiều rộng để căn giữa */
+    width: 100% !important;
+
+    /* 3. ÉP BUỘC CĂN GIỮA TOÀN BỘ PHẦN TỬ */
+    margin: 15px auto !important;
+
+    /* 4. Căn giữa văn bản bên trong (phòng trường hợp) */
+    text-align: center !important;
+
+    /* 5. Vô hiệu hóa float cũ */
+    float: none !important;
+  }
 }
 
 /* -------------------------------------- */
@@ -582,7 +591,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  min-width: 960px; /* Chiều rộng tối thiểu để chứa nav bar */
 }
 
 /* 1. CONTAINER CHÍNH */
@@ -762,3 +770,354 @@ body {
   font-size: 12px !important;
 }
 
+/* reponsive for small screen phones */
+
+/* --- FIX TỔNG HỢP CHO CĂN CHỈNH, TEXT VÀ KHỐI NỘI DUNG (DƯỚI 768PX) --- */
+@media (max-width: 768px) {
+  /* 1. ĐẢM BẢO KHÔNG CÓ LỖI TRÀN NGANG */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* 2. CĂN CHỈNH TỔNG QUAN VÀ XẾP CHỒNG CỘT */
+  /* Áp dụng cho khối FaceTime tiêu chuẩn và khối đảo ngược */
+  .facetime-block,
+  .facetime-reversed {
+    display: flex !important;
+    flex-direction: column !important; /* Luôn xếp chồng (Văn bản trên, Ảnh dưới) */
+    width: 100% !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+  }
+
+  /* ĐẢO NGƯỢC THỨ TỰ cho khối đảo ngược để đảm bảo Ảnh vẫn nằm dưới Văn bản */
+  /* Nếu bạn muốn ảnh nằm dưới văn bản trong mọi trường hợp, hãy xóa quy tắc này. */
+  .facetime-reversed {
+    flex-direction: column !important; /* Bỏ đảo ngược để Ảnh luôn nằm dưới Text */
+  }
+
+  /* Đảm bảo các khối con chiếm 100% và có padding hợp lý */
+  .text-block,
+  .image-block {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 10px auto !important;
+    text-align: center !important; /* RẤT QUAN TRỌNG: Căn giữa mọi thứ */
+  }
+
+  /* 3. TINH CHỈNH TEXT (Giảm kích thước chữ và khoảng cách) */
+  h1,
+  h2,
+  .facetime-title {
+    font-size: 24px !important; /* Giảm để tránh ngắt dòng kỳ lạ */
+    line-height: 1.2 !important;
+    margin: 10px auto 5px auto !important;
+    text-align: center !important;
+  }
+
+  /* Đoạn văn bản */
+  p {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin: 0 auto 8px auto !important;
+    padding: 0 15px !important; /* Giữ padding ngang nhẹ */
+    max-width: 95% !important; /* Giới hạn chiều rộng đoạn văn */
+    text-align: center !important; /* Căn giữa */
+  }
+
+  /* 4. FIX ẢNH VÀ BIỂU TƯỢNG TRÀN */
+  .facetime-image img,
+  .text-block img,
+  .retina-display-image img {
+    max-width: 95% !important; /* Giảm nhẹ chiều rộng */
+    height: auto !important;
+    margin: 15px auto !important;
+    display: block !important;
+  }
+
+  /* FIX BIỂU TƯỢNG (Ví dụ: biểu tượng kẹp giấy, nếu nó là một div hoặc span) */
+  /* Nếu biểu tượng đó đang bị đặt vị trí cố định hoặc tuyệt đối, quy tắc này sẽ giúp ẩn nó */
+  .clip-icon,
+  .absolute-icon,
+  .paperclip-icon {
+    display: none !important; /* Tạm thời ẩn các biểu tượng trang trí nhỏ đang gây lỗi */
+  }
+}
+/* TẠM THỜI ẨN CÁC BIỂU TƯỢNG HOẶC PHẦN TỬ TRANG TRÍ ĐANG GÂY LỖI TRÀN */
+.paperclip-icon, 
+.clip-icon, 
+.absolute-icon,
+/* Thêm ID này nếu biểu tượng có ID */
+#clip-icon {
+  display: none !important;
+}
+/* --- FIX VĂN BẢN VÀ CĂN CHỈNH TRIỆT ĐỂ (DƯỚI 768PX) --- */
+@media (max-width: 768px) {
+  /* 1. ĐẢM BẢO KHỐI CONTAINER CHUNG CĂN GIỮA */
+  /* Đây là container chứa toàn bộ nội dung trong khối trắng */
+  .content-container,
+  .facetime-block,
+  .facetime-reversed {
+    width: 100% !important;
+    max-width: 400px !important; /* Đặt giới hạn tối đa cho khối trắng */
+    margin: 0 auto !important; /* RẤT QUAN TRỌNG: ÉP BUỘC CĂN GIỮA KHỐI */
+    padding: 0 10px !important;
+    text-align: center !important; /* Căn giữa toàn bộ nội dung trong khối */
+  }
+
+  /* 2. ÉP BUỘC CĂN GIỮA VÀ CO LẠI CÁC KHỐI CON */
+  .text-block,
+  .image-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important; /* Ép buộc căn giữa từng khối con */
+    padding: 10px 0 !important;
+    text-align: center !important;
+  }
+
+  /* 3. TINH CHỈNH TEXT MỘT CÁCH TÍCH CỰC */
+  h1,
+  h2,
+  .facetime-title {
+    font-size: 22px !important; /* Giảm để tránh ngắt dòng kỳ lạ */
+    line-height: 1.2 !important;
+    margin: 10px auto 5px auto !important;
+    text-align: center !important;
+  }
+
+  /* Đoạn văn bản (Text chính) */
+  p {
+    font-size: 13px !important; /* RẤT QUAN TRỌNG: Giảm xuống 13px */
+    line-height: 1.3 !important;
+    margin: 0 auto 5px auto !important;
+    padding: 0 5px !important; /* Giảm padding ngang */
+    max-width: 95% !important;
+    text-align: center !important; /* ÉP BUỘC CĂN GIỮA */
+  }
+}
+
+/* --- KIỂU DÁNG CHUNG VÀ FONT APPLE --- */
+.apple-contact-section {
+  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  color: #1d1d1f; /* Màu chữ đen đậm */
+}
+
+.contact-title {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.contact-slogan {
+  font-style: italic;
+  color: #6e6e73;
+  margin-bottom: 40px;
+}
+
+/* --- BỐ CỤC CHÍNH (Sử dụng Flexbox) --- */
+.contact-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Căn chỉnh nội dung lên trên */
+  gap: 40px;
+}
+
+/* --- CỘT TRÁI: THÔNG TIN LIÊN HỆ --- */
+.contact-info-column {
+  flex: 1; /* Chiếm 1 phần không gian */
+  text-align: left;
+  padding-top: 20px;
+  max-width: 400px; /* Giới hạn chiều rộng */
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.info-item i {
+  font-size: 20px;
+  color: #007aff; /* Màu xanh dương Apple */
+  width: 30px; /* Cố định chiều rộng biểu tượng */
+  margin-right: 15px;
+}
+
+.info-item p {
+  margin: 0;
+}
+
+/* --- CỘT PHẢI: FORM LIÊN HỆ --- */
+.contact-form-column {
+  flex: 2; /* Chiếm 2 phần không gian (rộng hơn) */
+  width: 100%;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-form-column input[type="text"],
+.contact-form-column input[type="email"],
+.contact-form-column textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d2d2d7; /* Viền xám nhẹ */
+  border-radius: 8px; /* Bo góc nhẹ */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.contact-form-column input:focus,
+.contact-form-column textarea:focus {
+  border-color: #007aff; /* Xanh dương khi focus */
+  outline: none;
+}
+
+/* --- NÚT GỬI (SEND BUTTON) --- */
+.apple-send-button {
+  float: right; /* Đẩy nút sang phải như trong ảnh mẫu */
+  padding: 10px 25px;
+  background-color: #1d1d1f; /* Màu đen đậm */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.apple-send-button:hover {
+  background-color: #333333;
+}
+
+/* --- RESPONSIVE: CHUYỂN SANG 1 CỘT DƯỚI 768px --- */
+@media (max-width: 768px) {
+  .contact-content-wrapper {
+    flex-direction: column; /* Chuyển sang bố cục 1 cột */
+    gap: 30px;
+  }
+
+  .contact-info-column,
+  .contact-form-column {
+    max-width: 100%;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .contact-info-column {
+    text-align: center; /* Căn giữa thông tin liên hệ */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee; /* Thêm đường phân cách */
+  }
+
+  .info-item {
+    justify-content: center; /* Căn giữa các mục thông tin */
+  }
+
+  .form-group-row {
+    flex-direction: column; /* Xếp chồng Name và Email */
+    gap: 0;
+  }
+
+  .contact-form-column input[type="text"],
+  .contact-form-column input[type="email"] {
+    margin-bottom: 15px;
+  }
+
+  .apple-send-button {
+    float: none; /* Bỏ float */
+    display: block; /* Buộc nút chiếm toàn bộ chiều rộng */
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+/* ==========================================================
+           1. KHỐI BAO NGOÀI TOÀN TRANG (PAGE WRAPPER)
+           Sử dụng FIXED để căn giữa tuyệt đối trên toàn màn hình.
+           ========================================================== */
+#thk-page-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f7;
+  text-align: center;
+  margin: 0;
+}
+
+/* ==========================================================
+           2. KHỐI CHỨA NỘI DUNG (THANK YOU BOX)
+           ========================================================== */
+.thk-main-container {
+  max-width: 450px;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+           3. CSS cho Logo, Tiêu đề, Văn bản và Nút
+           ========================================================== */
+.thk-logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thk-h1-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.thk-p-text {
+  font-size: 16px;
+  color: #6e6e73;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.thk-btn-home {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #007aff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.thk-btn-home:hover {
+  background-color: #0066cc;
+}
